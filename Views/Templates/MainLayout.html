@@ -1,0 +1,44 @@
+$def with (page)
+<html lang="en">
+<head>
+  <title>CarbonLab</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="app">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+             <!-- Brand/logo -->
+             <a class="navbar-brand" href="#">CarbonLab</a>
+
+             <!-- Links -->
+             <ul class="navbar-nav mr-auto">
+                 <li class="nav-item">
+                     <a class="nav-link" href="/">Home</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="/products">Products</a>
+                 </li>
+                 <li class="nav-item">
+                     <a class="nav-link" href="/contact-us">Contact Us</a>
+                 </li>
+             </ul>
+
+             <div class="float-right">
+                $if session["user"] == None :
+                    <a href="/login" class="btn btn-default bg-light">Login</a> 
+                    <a href="/register" class="btn btn-default bg-light">Register</a>
+                $else:
+                    <a class="text-light">welcome $session["user"]["name"]</a>
+                    <a id="logout-link" class="btn btn-default bg-light">Logout</a> 
+             </div>
+        </nav>
+        $:page
+    </div>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.5.0/js/bootstrap.min.js"></script>
+<script src="static/scripty.js"></script>
+</body>
+</html>

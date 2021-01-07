@@ -1,0 +1,65 @@
+$def with (posts, products)
+<div class="container">
+    <h3>create blog post</h3>
+    
+    <div class="row">
+        <ul class="w-50 px-3 list-group">
+            $for post in posts:
+            <li class="list-group-item">
+                $post['title']
+                <a id="del-btn" href="/deletepost/$post['post_number']" class="float-right btn btn-default bg-danger text-light">Delete</a>
+                <a href="#" class="float-right btn btn-default bg-primary text-light">Edit</a>
+            </li>
+        </ul>
+        <form id="post-form">
+            <div class="form-group">
+                <label for="comment">Title:</label>
+                <textarea class="form-control" rows="1" name="title"></textarea>
+                <label for="comment">Article:</label>
+                <textarea class="form-control" rows="5" name="article"></textarea>
+           
+            </div>
+            <div class="input-group">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="image" id="inputGroupFile02" enctype="multipart/form-data">
+                    <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                </div>
+                <div class="input-group-append">
+                    <span class="input-group-text" id="">Upload</span>
+                </div>
+            </div> 
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </div> 
+    <h3>create new product</h3>
+    <div class="row">    
+        <ul class="w-50 px-3 list-group">
+            $for product in products:
+            <li class="list-group-item">
+                $product['product']
+                <a id="del-btn" href="/deleteproduct/$product['product_number']" class="float-right btn btn-default bg-danger text-light">Delete</a>
+                <a href="#" class="float-right btn btn-default bg-primary text-light">Edit</a>
+            </li>
+        </ul>
+        <form id="new-product">
+            <div class="form-group">
+                <label for="comment">Product Name:</label>
+                <textarea class="form-control" rows="1" name="product"></textarea>
+                <label for="comment">Product Description:</label>
+                <textarea class="form-control" rows="1" name="description"></textarea>
+                <label for="comment">Price:</label>
+                <textarea class="form-control" rows="1" name="price"></textarea>          
+            </div>
+            <div class="input-group">
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" name="image" id="inputGroupFile02" enctype="multipart/form-data">
+                    <label class="custom-file-label" for="inputGroupFile02">Choose file</label>
+                </div>
+                <div class="input-group-append">
+                    <span class="input-group-text" id="">Upload</span>
+                </div>
+            </div> 
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>   
+    </div>
+</div>

@@ -17,3 +17,8 @@ class LoginModel:
                 return False
         else:
             return False
+
+    def updateProfile(self, data):
+        update = self.Users.update_one({'email': data.email}, {'$set': data})
+        return True
+

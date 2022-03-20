@@ -1,24 +1,17 @@
-<div class="container-fluid">
-    
-    <div class="jumbotron">
-        <h2>title</h2>
-        <p>content</p>
-        <IMG src="images/sample.jpg" class="rounded" alt="Cinque Terre" width="304" height="236"/>
-    </div>
+$def with (posts, ifactive)
+<div class="container-fluid bg-light">
+    <img src="/static/images/firstpage2.jpg" class="solid-pic card-img-top" alt="...">
+    <div class="card-deck">
+        $for post in posts:
+        <div class="card">
+            <img src="$post['image']" class="card-img-top" style="height: 200px" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">$post['title']</h5>
+                <p class="card-text overflow-hidden">$post['article']</p>
+                <p class="card-text"><small class="text-muted">$post['dateAdded']</small></p>
 
-    <div id="post-form">
-       <form action="/action_page.php">
-            <div class="form-group">
-                <label for="comment">Title:</label>
-                <textarea class="form-control" rows="1" id="title" name="title"></textarea>
-                <label for="comment">Article:</label>
-                <textarea class="form-control" rows="5" id="article" name="article"></textarea>
- 
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form> 
-
-        
+        </div>
     </div>
 </div>
 

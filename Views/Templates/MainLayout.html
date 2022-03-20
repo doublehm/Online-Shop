@@ -4,11 +4,13 @@ $def with (page)
   <title>CarbonLab</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/css/styles.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-sm navbar-light bg-light">
              <!-- Brand/logo -->
              <a class="navbar-brand" href="#">CarbonLab</a>
 
@@ -23,6 +25,12 @@ $def with (page)
                  <li class="nav-item">
                      <a class="nav-link" href="/contact-us">Contact Us</a>
                  </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="/blog">Blog</a>
+                 </li>
+                 <li class="nav-item">
+                    <a class="nav-link" href="/controlpanel">Control Panel</a>
+                 </li>
              </ul>
 
              <div class="float-right">
@@ -30,15 +38,25 @@ $def with (page)
                     <a href="/login" class="btn btn-default bg-light">Login</a> 
                     <a href="/register" class="btn btn-default bg-light">Register</a>
                 $else:
-                    <a class="text-light">welcome $session["user"]["name"]</a>
+                    <a href="/cart" class="cart mx-1"><img src="/static/images/cart.png" class="cart"/></a>
+                    <a href="/profile" class="text-dark">welcome $session["user"]["name"]</a>
                     <a id="logout-link" class="btn btn-default bg-light">Logout</a> 
              </div>
         </nav>
         $:page
+        <footer class="bg-light text-center text-lg-start">
+        <!-- Copyright -->
+            <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+                © 2020 Copyright:
+                <a class="text-dark" href="https://mdbootstrap.com/">MDBootstrap.com</a>
+            </div>
+        <!-- Copyright -->
+        </footer>
     </div>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.5.0/js/bootstrap.min.js"></script>
-<script src="static/scripty.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+<script src="/static/js/scripty.js"></script>
+
 </body>
 </html>

@@ -1,4 +1,18 @@
+$def with (products)
 <div class="container">
-<h2>there is no products available at the moment.</h2>
+<div class="row row-cols-1 row-cols-md-2">
+    $for product in products:
+    <div class="col mb-4">
+        <div class="card">
+            <img src="$product['image']" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">name : $product['product']</h5>
+                <p class="card-text">info : $product['description']</p>
+                <h4 class="card-text">price : $product['price']</h4>                
+                <a href="/add-to-cart/$product['product_number']" class="btn btn-primary">add to cart</a>
+            </div>
+        </div>
+    </div>
 
+</div>
 </div>

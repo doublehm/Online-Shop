@@ -1,0 +1,26 @@
+$def with (cart,total_order_price)
+<div class="container">
+    
+   <form class="row g-3">
+        $for item in cart:
+        <div class="col-auto">
+            <input type="text" readonly class="form-control-plaintext" id="productName$item['number']" value="$item['product_name']">
+        </div>
+        <div class="col-auto">
+            <input type="text" class="count form-control" id="$item['product_number']" name="count" value="$item['order_count']">
+        </div>
+        <div class="col-auto">
+            <input type="text" readonly class="form-control-plaintext" id="productPrice$item['number']" value="$item['product_price'] Rials">
+        </div>
+        <div class="col-auto">
+            <input type="text" readonly class="form-control-plaintext" id="productTP$item['number']" value="$item['order_price'] Rials">
+        </div>
+    </form>
+    <form class="row">
+        <div class="col-auto"><input type="text" readonly class="form-control-plaintext" value="Total Cart Price:"/></div>
+        <div class="col-auto"><input type="text" readonly class="form-control" id="total-value" value="$total_order_price"/></div>
+    </form>
+    <div>
+        
+    </div>
+</div>

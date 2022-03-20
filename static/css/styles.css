@@ -1,0 +1,35 @@
+.container-fluid {
+    background-color: #ff5500 
+}
+
+.navbar {
+background-color: #E6E6FA
+}
+
+body {
+	background-image: url("/static/images/firstpage2.jpg");
+    background-repeat: no-repeat, repeat;
+}
+
+.card {
+	margin: 10px;
+}
+
+.solid-pic {
+height: 500px;
+object-fit: cover;
+}
+
+.blog-cards {
+    height:300px;
+    object-fit: cover;
+}
+
+.container {
+    min-height:1000px;
+}
+
+.cart {
+    height:20px;
+    width:25px;
+}

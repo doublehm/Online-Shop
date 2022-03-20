@@ -1,0 +1,28 @@
+$def with (found_post)
+<div class="container">
+    <div class="card mb-3">
+        <img src="$found_post['image']" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">$found_post['title']</h5>
+            <p class="card-text">$found_post['article']</p>
+            <p class="card-text"><small class="text-muted">$found_post['timeStamp']</small></p>
+        </div>
+        <div class="card-footer">
+            <div class="comments">
+                $for comment in found_post['comments']:
+                <h6>
+                    $comment['username']
+                    <small class="text-muted">$comment['comment-text']</small>
+                </h6>
+            </div>
+            <div class="comment add">
+                <form id="comment-form">
+                    <input name="post_id" class="d-none hidden" value="$found_post['_id']" />
+                    <textarea name="commenttext" class="form-control" placeholder="write a comment"></textarea>
+                    <button type="submit" class="btn btn-info pull-right">add comment</button>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
